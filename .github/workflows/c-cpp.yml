@@ -8,29 +8,17 @@ on:
 
 defaults:
   run:
-    # Replace 'your-folder-name' with the exact name of your uploaded folder
     working-directory: ./MP3_TAG_READ_EDIT
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
-    
-    - name: configure
-      run: ./configure
       
-    - name: make
+    - name: Compile with Makefile
       run: make
       
-    - name: make check
-      run: make check
-      
-    - name: make distcheck
-      run: make distcheck
-
-    - name: Run the Code
-      # Replace 'your_executable_name' with the actual name of your output file
+    - name: Run the Program
       run: ./mp3_tg_re
